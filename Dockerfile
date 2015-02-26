@@ -10,7 +10,6 @@ add ./config.py /var/lib/tessera/config.py
 run	mkdir /src
 run	git clone https://github.com/urbanairship/tessera.git /src/tessera
 workdir	/src/tessera
-run git checkout tags/v0.5.0
 run	pip install -r requirements.txt
 run	pip install -r dev-requirements.txt
 run	npm install -g grunt-cli
