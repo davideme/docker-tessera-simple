@@ -5,7 +5,7 @@ RUN apt-get install -y python-pip python-dev curl git gunicorn supervisor
 
 # Tessera
 RUN mkdir /src && git clone https://github.com/urbanairship/tessera.git /src/tessera
-ADD config.py /src/tessera/config.py
+ADD config.py /src/tessera/tessera/config.py
 
 workdir	/src/tessera
 RUN pip install -r requirements.txt
