@@ -14,6 +14,9 @@ RUN npm install -g grunt-cli
 RUN npm install
 RUN grunt
 RUN	mkdir -p /var/lib/tessera/
+RUN	chown -R www-data /var/lib/tessera
+RUN	chmod 0775 /var/lib/tessera
+
 RUN invoke db.init
 RUN invoke run & sleep 5 && invoke json.import 'demo/*.json'
 
