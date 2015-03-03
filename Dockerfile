@@ -13,6 +13,9 @@ RUN pip install -r dev-requirements.txt
 RUN npm install -g grunt-cli
 RUN npm install
 RUN grunt
+RUN	mkdir -p /var/lib/tessera/
+RUN invoke db.init
+RUN invoke run & sleep 5 && invoke json.import 'demo/*.json'
 
 # Supervisord
 ADD	./supervisord.conf /etc/supervisor/conf.d/supervisord.conf
